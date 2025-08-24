@@ -3,4 +3,4 @@ pyvista
 pandas
 numpy
 vtk
-
+stpyvista

@@ -4,6 +4,7 @@ import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
 import tempfile
+from stpyvista import stpyvista
 
 
 
@@ -84,8 +85,8 @@ st.title("Interactive 3D Point Cloud Viewer")
 
 # Embed the PyVista scene
 
-cam_x = st.slider("Camera X", -5000, 5000, 0)
-cam_y = st.slider("Camera Y", -5000, 5000, 0)
+cam_x = st.slider("Camera X", -5000, 5000, 500)
+cam_y = st.slider("Camera Y", -5000, 5000, 500)
 cam_z = st.slider("Camera Z", -5000, 5000, 1000)
 
 focal_x = st.slider("Focal X", -5000, 5000, 0)
@@ -93,15 +94,17 @@ focal_y = st.slider("Focal Y", -5000, 5000, 0)
 focal_z = st.slider("Focal Z", -5000, 5000, 0)
 
 pl.camera_position = [(cam_x, cam_y, cam_z), (focal_x, focal_y, focal_z), (0, 0, 1)]
+stpyvista(pl, key="pv_bubble")
 
-with tempfile.NamedTemporaryFile(delete=False, suffix=".html") as tmpfile:
-    pl.export_html(tmpfile.name)
-    tmpfile.seek(0)
-    html_str = tmpfile.read().decode("utf-8")
+#with tempfile.NamedTemporaryFile(delete=False, suffix=".html") as tmpfile:
+#    pl.export_html(tmpfile.name)
+#    tmpfile.seek(0)
+#    html_str = tmpfile.read().decode("utf-8")
 
-components.html(html_str, height=600)
+#components.html(html_str, height=600)
 
 
 
 
 #pl.show()
+

@@ -36,7 +36,7 @@ def get_allegiance_styles():
 
 
 #df = pd.read_csv('G:/Elite/Spansh_Data/2025/bubble/bubble_4500ly_time20250822_1.csv')
-df = pd.read_csv('G:/Elite/Spansh_Data/2025/bubble/startbubble.csv')
+df = pd.read_csv('startbubble.csv')
 points = df[['x','y','z']].to_numpy()
 df[["y", "z"]] = df[["z", "y"]]  # Swap columns in-place
 

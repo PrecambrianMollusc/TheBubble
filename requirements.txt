@@ -1,6 +1,6 @@
 streamlit
 pyvista
-stpyvista>=0.3
+stpyvista
 pandas
 numpy
 vtk

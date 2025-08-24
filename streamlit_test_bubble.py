@@ -4,7 +4,7 @@ import numpy as np
 import streamlit as st
 import streamlit.components.v1 as components
 import tempfile
-from stpyvista import stpyvista
+import stpyvista
 
 
 
@@ -107,4 +107,5 @@ stpyvista(pl, key="pv_bubble")
 
 
 #pl.show()
+
 

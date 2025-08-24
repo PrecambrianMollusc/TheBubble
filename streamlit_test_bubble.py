@@ -5,6 +5,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import tempfile
 from stpyvista import stpyvista
+from stpyvista.utils import start_xvfb
 
 
 
@@ -33,7 +34,9 @@ def get_allegiance_styles():
     }
 
     return groups, base_styles, gain_styles
-
+if "IS_XVFB_RUNNING" not in st.session_state:
+    start_xvfb()
+    st.session_state.IS_XVFB_RUNNING = True
 
 
 #df = pd.read_csv('G:/Elite/Spansh_Data/2025/bubble/bubble_4500ly_time20250822_1.csv')
@@ -107,6 +110,7 @@ stpyvista(pl, key="pv_bubble")
 
 
 #pl.show()
+
 
 
 

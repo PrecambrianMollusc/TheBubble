@@ -1,0 +1,6 @@
+streamlit
+pyvista
+pandas
+numpy
+vtk
+

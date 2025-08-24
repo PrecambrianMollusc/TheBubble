@@ -1,6 +1,0 @@
-streamlit>=1.32
-pyvista>=0.43
-pandas>=2.2
-numpy>=1.26
-vtk>=9.3           # Required by PyVista for rendering
-#pyvistaqt>=0.10    # If you ever switch to Qt-based interactive plotting

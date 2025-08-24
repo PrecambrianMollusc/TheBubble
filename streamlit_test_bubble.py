@@ -36,7 +36,7 @@ def get_allegiance_styles():
 
 
 #df = pd.read_csv('G:/Elite/Spansh_Data/2025/bubble/bubble_4500ly_time20250822_1.csv')
-df = pd.read_csv('startbubble.csv')
+df = pd.read_csv('Startbubble.csv')
 points = df[['x','y','z']].to_numpy()
 df[["y", "z"]] = df[["z", "y"]]  # Swap columns in-place
 
@@ -100,6 +100,7 @@ with tempfile.NamedTemporaryFile(delete=False, suffix=".html") as tmpfile:
     html_str = tmpfile.read().decode("utf-8")
 
 components.html(html_str, height=600)
+
 
 
 
